@@ -1,0 +1,4 @@
+ul li a{text-decoration: none; color:black;}
+ul li{display: inline; padding: 30px; text-align:center; font-family: Arial; background: #D3D3D3;}
+ul li :hover{color:#ADD8E6;}
+ul{background-color: #D3D3D3; padding:30px;}
