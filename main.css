@@ -2,7 +2,7 @@ body{margin: 0;}
 .opcije{background-color: #E0E0E0; padding: 15px; transform: translateY(-20px);}
 .opcije li{display: inline; text-decoration: none; margin:60px;}
 .opcije li a{ text-decoration: none; color: black;}
-.opcije li a:hover{color: #99FFFF;}
+.opcije li a:hover{color: #3399FF;}
 html{background-image: url("background_img.jpg"); background-attachment: fixed;}
 .logo{background: white; position: relative; padding-right: 100%;}
 @media screen and (min-width: 1500px){.logo{padding-left: 500px;}}
