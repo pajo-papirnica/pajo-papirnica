@@ -1,4 +1,7 @@
+body{margin:0;}
 ul li a{text-decoration: none; color:black;}
-ul li{display: inline; padding: 30px; text-align:center; font-family: Arial; background: #D3D3D3;}
-ul li :hover{color:#ADD8E6;}
-ul{background-color: #D3D3D3; padding:30px;}
+ul li{display: inline; position: relative; padding:50px; padding-top: 10px; padding-bottom: 10px; text-align:center; font-family: Arial; background: #D3D3D3;}
+ul li :hover{color:#00FFFF;}
+ul{background-color: #D3D3D3; padding:15px;}
+html{background-image: url("background_img.jpg");}
+img{background-color: white; padding-right: 100%; padding-bottom: 5px; padding-top: 5px; transform: translateY(25px);}
