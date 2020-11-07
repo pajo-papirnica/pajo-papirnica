@@ -19,3 +19,4 @@
       </center>
   </body>
 </html>
+<!--promjenio sam u .php da ja  moren radit u njemu osim tega nis nisan minja zasad tebi bbi tribalo sve ostat isto,jedinjo ako nemozes otvorit file onda ga preimenuj natrag u .html-->
