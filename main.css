@@ -1,10 +1,15 @@
-*{margin:0;}
-ul li a{text-decoration: none; color:black;}
-ul li{display: inline; padding:50px; padding-top: 10px; padding-bottom: 10px; text-align:center; font-family: Arial; background: #E0E0E0;}
-ul li :hover{color:#00FFFF;}
-ul{background-color: #E0E0E0; padding:15px; transform: translateY(-5px); width:100rem;}
-html{background-image: url("background_img.jpg"); position: fixed;}
-.img1{background-color: white; padding-right: 100%; padding-bottom: 15px; padding-top: 5px;}
-.kontakt{width: 75%}
-.pocetna{width:25%}
-.O_nama{width: 50%}
+body{margin: 0;}
+.opcije{background-color: #E0E0E0; padding: 15px; transform: translateY(-20px);}
+.opcije li{display: inline; text-decoration: none; margin:60px;}
+.opcije li a{ text-decoration: none; color: black;}
+.opcije li a:hover{color: #99FFFF;}
+html{background-image: url("background_img.jpg"); background-attachment: fixed;}
+.logo{background: white; position: relative; padding-right: 100%;}
+@media screen and (min-width: 1500px){.logo{padding-left: 500px;}}
+.logo::after{padding-left: 500px;}
+.narance{height: 500px; background-color: #3399FF;}
+.logo2{ height: 500px; width: 500px;}
+.brojevi li{display: inline; text-decoration: none; margin:100px; color:white; font-size: 60px;}
+.brojevi{background-color: #00CC66; padding: 15px; transform: translateY(-100px);}
+.info li{display: inline; text-decoration: none; margin:60px; color:white; font-size: 18px;}
+.info{background-color: #00CC66; padding: 15px; transform: translateY(-140px);}
