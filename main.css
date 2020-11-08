@@ -1,10 +1,3 @@
-*{margin:0;}
-ul li a{text-decoration: none; color:black;}
-ul li{margin:30px; display: inline; padding:50px; padding-top: 10px; padding-bottom: 10px; text-align:center; font-family: Arial; background: #E0E0E0;}
-ul li :hover{color:#00FFFF;}
-ul{position: relative; right: 100px; vertical-align: middle; background-color: #E0E0E0; padding:15px; transform: translateY(-5px); width:100%;}
-html{background-image: url("background_img.jpg"); position: fixed;}
-.img1{position: relative; left:555px; background-color: white; padding-right: 100%; padding-bottom: 15px; padding-top: 5px;}
 body{margin: 0;}
 .opcije{background-color: #E0E0E0; padding: 15px; transform: translateY(-20px);}
 .opcije li{display: inline; text-decoration: none; margin:60px;}
