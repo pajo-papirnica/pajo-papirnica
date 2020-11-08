@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<?php
-$upis = $_GET['fname']; 
-#$upiss = strtolower($upis);
+<?php 
+$upis = $_GET['fname'];
 $servername = "localhost";
 $username = "root";
 $password = "password";
 $dbname = "Pajo_Papirnica";
+#$upiss = strtolower($upis);
+function inputInfo($whatInfo) {
+global $upis, $servername, $username, $password, $dbname;
 $conn = new mysqli($servername, $username, $password, $dbname); # connectanje u databazu
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error); # ako je error fuck offaj
 }
 $sql = "SELECT * FROM `Inventar` WHERE `id`='$upis'"; 
 $result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+	return $row["$whatInfo"];
+  }
+} else {
+  echo "0 results";
+}
+}
 ?>
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<div id="whole">
 <center>
 <ul class="opcije">
-   <li><a href="#">Početna</a></li>
-   <li><a href="#">O Nama</a></li>
-   <li><a href="#">Asortiman</a></li>
-   <li><a href="#">Kontakt</a></li>
-   <li><a href="#">
+   <li>
 	<form action="productLayout.php" method="get">
 		<input type="text" id="fname" name="fname">
 		<input type="submit" value="Pretraži">
 	</form>
-   
-   </a></li>
+   </li>
+   <li><a href="#">Početna</a></li>
+   <li><a href="#">O Nama</a></li>
+   <li><a href="#">Asortiman</a></li>
+   <li><a href="#">Kontakt</a></li>
 </ul>
 </center>
 <div id="left">
 <div id="bigPicture">
 <?php
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-	echo "<img id='mainPic' height='50%' width='50%' src=".$row["slika"].">";
-  }
-} else {
-  echo "0 results<br>";
-}
+$slika = inputInfo("slika");
+echo "<img id='mainPic' height='55%' width='60%' src=pajo-papirnica/".$slika.">";
 ?>
 </div>
 </div>
@@ -53,15 +56,7 @@ if ($result->num_rows > 0) {
 <center>
 <h1><p>
 <?php
-$sql = "SELECT * FROM `Inventar` WHERE `id`='$upis'"; 
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-	echo $row["artikal"];
-  }
-} else {
-  echo "0 results<br>";
-}
+echo inputInfo("artikal");
 ?>
 </p></h1>
 </center>
@@ -72,15 +67,7 @@ if ($result->num_rows > 0) {
 <br />
 <p>
 <?php
-$sql = "SELECT * FROM `Inventar` WHERE `id`='$upis'"; 
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-	echo $row["opis"];
-  }
-} else {
-  echo "0 results<br>";
-}
+echo inputInfo("opis");
 ?>
 </p>
 </div>
@@ -96,48 +83,23 @@ if ($result->num_rows > 0) {
 <br />
 <p>
 <?php
-$sql = "SELECT * FROM `Inventar` WHERE `id`='$upis'"; 
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-	echo "Cijena: ".$row["cijena"];
-  }
-} else {
-  echo "0 results<br>";
-}
+echo "Cijena: ".inputInfo("cijena")." kn";
 ?>
 </p>
 </div>
 <div id="dostupnost">
 <p>
 <?php
-$sql = "SELECT * FROM `Inventar` WHERE `id`='$upis'"; 
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-	echo "Dostupan: ".$row["dostupan"];
-  }
-} else {
-  echo "0 results<br>";
-}
+echo "Dostupan: ".inputInfo("dostupan");
 ?>
 </p>
 </div>
 <div id="proizvodac">
 <p>
 <?php
-$sql = "SELECT * FROM `Inventar` WHERE `id`='$upis'"; 
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-	echo "Proizvodac: ".$row["proizvodac"];
-  }
-} else {
-  echo "0 results<br>";
-}
+echo "Proizvodac: ".inputInfo("proizvodac");
 ?>
 </p>
-</div>
 </div>
 </div>
 </body>
