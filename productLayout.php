@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
 <div id="bigPicture">
 <?php
 $slika = inputInfo("slika");
-echo "<img id='mainPic' height='55%' width='60%' src=pajo-papirnica/".$slika.">";
+echo "<img id='mainPic' height='55%' width='60%' src=".$slika.">";
 ?>
 </div>
 </div>
