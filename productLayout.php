@@ -40,7 +40,7 @@ $result = $conn->query($sql);
 <?php
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-	echo "<img id='mainPic' height='50%' width='50%' src=pajo-papirnica/".$row["slika"].">";
+	echo "<img id='mainPic' height='50%' width='50%' src=".$row["slika"].">";
   }
 } else {
   echo "0 results<br>";
